@@ -9,9 +9,9 @@ import FavoriteScreen from "./screen/FavoriteScreen"
 import QuizScreen from "./screen/QuizScreen"
 import SettingsScreen from "./screen/SettingsScreen"
 import AboutScreen from "./screen/AboutScreen"
+import ActionScreen from "./screen/ActionScreen"
 
 // Screen Names
-
 const homeName = "Home"
 const favoriteName = "Favorite"
 const quizName = "Quiz"
@@ -47,7 +47,7 @@ export default function MainContainer() {
         })}
       >
         <Tab.Screen name={homeName} component={HomeScreen} />
-        <Tab.Screen name={favoriteName} component={FavoriteScreen} />
+        <Tab.Screen name={favoriteName} component={ActionScreen} />
         <Tab.Screen name={quizName} component={QuizScreen} />
         <Tab.Screen name={settingsName} component={SettingsScreen} />
         <Tab.Screen name={aboutName} component={AboutScreen} />
