@@ -19,12 +19,17 @@ import * as Speech from "expo-speech"
 import Tts from "react-native-tts"
 
 // Action Data
-import { actionData } from "../../json/action"
+import { bodyParts } from "../../json/bodyParts"
 import { useNavigation } from "@react-navigation/native"
 
 export default function ActionScreen({ navigation }) {
-  const [filterData, setFilterData] = React.useState([])
-  const [masterData, setMasterData] = React.useState([])
+  const onClickItem = (item) => {
+    Speech.speak(item.english)
+    Speech.speak(item.tagalog)
+    Speech.speak(item.kapampangan)
+  }
+
+  const onFavItem = (item) => {}
 
   const oneAction = ({ item }) => (
     <View style={styles.item}>
@@ -94,9 +99,9 @@ export default function ActionScreen({ navigation }) {
           // ListHeaderComponent={headerComponent}
           ListEmptyComponent={<Text>List Empty</Text>}
           ItemSeparatorComponent={itemSeparator}
-          data={actionData}
+          data={bodyParts}
           renderItem={oneAction}
-          keyExtractor={actionData.id}
+          keyExtractor={bodyParts.id}
         />
       </SafeAreaView>
     </ImageBackground>

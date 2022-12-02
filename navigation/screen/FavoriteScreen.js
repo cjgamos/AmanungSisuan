@@ -1,15 +1,38 @@
 import * as React from "react"
-import { View, Text } from "react-native"
+import { View, Text, StyleSheet, ImageBackground } from "react-native"
+
+// BG
+import BGImage from "../../assets/BG.png"
+
+// Component
+import FavoriteItem from "../../components/FavoriteItem"
+import FavoriteList from "../../components/FavoriteList"
+
+import AsyncStorage from "@react-native-async-storage/async-storage"
 
 export default function FavoriteScreen({ navigation }) {
+ 
+
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text
-        onPress={() => alert('This is "Favorite" screen.')}
-        style={{ fontSize: 26, fontWeight: "bold" }}
+    <ImageBackground source={BGImage} style={styles.backgroundimage}>
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "rgba(234,234,234,.8)",
+        }}
       >
-        Favorite Screen
-      </Text>
-    </View>
+        <FavoriteList />
+      </View>
+    </ImageBackground>
   )
 }
+
+const styles = StyleSheet.create({
+  backgroundimage: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+  },
+})
