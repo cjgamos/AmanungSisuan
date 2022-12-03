@@ -10,6 +10,7 @@ import {
   Alert,
   TouchableOpacity,
   Modal,
+  TextInput,
 } from "react-native"
 import BGImage from "../../assets/BG.png"
 import Ionicons from "react-native-vector-icons/Ionicons"
@@ -23,13 +24,20 @@ import { commonGreetings } from "../../json/commonGreetings"
 import { useNavigation } from "@react-navigation/native"
 
 export default function ActionScreen({ navigation }) {
-  const onClickItem = (item) => {
-    Speech.speak(item.english)
-    Speech.speak(item.tagalog)
-    Speech.speak(item.kapampangan)
+  const [filterData, setFilterData] = React.useState([])
+  const [masterData, setMasterData] = React.useState([])
+  const [search, setSearch] = React.useState("")
+
+  const fetchPost = () => {
+    setFilterData(commonGreetings)
+    setMasterData(commonGreetings)
   }
 
-  const onFavItem = (item) => {}
+  React.useEffect(() => {
+    fetchPost()
+
+    return () => {}
+  }, [])
 
   const oneAction = ({ item }) => (
     <View style={styles.item}>
@@ -37,7 +45,7 @@ export default function ActionScreen({ navigation }) {
         name='add-circle-outline'
         size={30}
         onPress={() => {
-          alert(item.english)
+          alert("Added to Favorite")
         }}
       /> */}
       <TouchableOpacity
@@ -91,17 +99,41 @@ export default function ActionScreen({ navigation }) {
     return <View style={styles.separator} />
   }
 
+  const searchFilter = (text) => {
+    if (text) {
+      const newData = masterData.filter((item) => {
+        const itemData = item.tagalog
+          ? item.tagalog.toUpperCase()
+          : "".toUpperCase()
+        const textData = text.toUpperCase()
+        return itemData.indexOf(textData) > -1
+      })
+      setFilterData(newData)
+      setSearch(text)
+    } else {
+      setFilterData(masterData)
+      setSearch(text)
+    }
+  }
+
   return (
     <ImageBackground source={BGImage} style={styles.backgroundimage}>
       <SafeAreaView style={styles.container}>
+        <TextInput
+          style={styles.textInputStyle}
+          value={search}
+          placeholder='Search Tagalog Keyword Here'
+          underlineColorAndroid='transparent'
+          onChangeText={(text) => searchFilter(text)}
+        />
         <FlatList
           ListHeaderComponentStyle={styles.listHeader}
           // ListHeaderComponent={headerComponent}
           ListEmptyComponent={<Text>List Empty</Text>}
           ItemSeparatorComponent={itemSeparator}
-          data={commonGreetings}
+          data={filterData}
           renderItem={oneAction}
-          keyExtractor={commonGreetings.id}
+          keyExtractor={(item, index) => index.toString()}
         />
       </SafeAreaView>
     </ImageBackground>
@@ -168,5 +200,14 @@ const styles = StyleSheet.create({
     height: 1,
     width: "100%",
     backgroundColor: "#CCC",
+  },
+
+  textInputStyle: {
+    height: 50,
+    borderWidth: 1,
+    paddingLeft: 20,
+    margin: 5,
+    borderColor: "#009688",
+    backgroundColor: "white",
   },
 })

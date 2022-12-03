@@ -1,5 +1,13 @@
 import * as React from "react"
-import { View, Text, StyleSheet, ImageBackground, Button } from "react-native"
+import {
+  View,
+  Text,
+  StyleSheet,
+  ImageBackground,
+  Button,
+  Image,
+  TouchableOpacity,
+} from "react-native"
 import BGImage from "../assets/BG.png"
 
 import { NavigationContainer } from "@react-navigation/native"
@@ -23,6 +31,11 @@ import HardQuizScreen from "./screen/HardQuizScreen"
 
 // Popup
 import PopupScreen from "../components/Popup"
+
+// Images
+import BodyPic from "../assets/bodyParts/EYES_MATA.jpg"
+import ActionPic from "../assets/Actions/APOLOGIZE.jpg"
+import GreetingsPic from "../assets/commonGreetings/EXCUSEME.jpg"
 
 // Screen Names
 const homeName = "Home"
@@ -50,27 +63,75 @@ function HomeScreen({ navigation }) {
     <ImageBackground source={BGImage} style={styles.backgroundimage}>
       <View style={styles.container}>
         <Text style={{ fontSize: 26, fontWeight: "bold" }}>Action</Text>
-        <Button title='Open' onPress={() => navigation.navigate("Action")} />
+        <TouchableOpacity onPress={() => navigation.navigate("Action")}>
+          <Image
+            source={ActionPic}
+            style={{
+              height: 100,
+              width: 250,
+              borderRadius: 20,
+              borderColor: "#009688",
+              marginTop: 5,
+              overflow: "hidden",
+              borderWidth: 3,
+            }}
+          />
+        </TouchableOpacity>
       </View>
       <View style={styles.container}>
         <Text style={{ fontSize: 26, fontWeight: "bold" }}>Body Parts</Text>
-        <Button
-          title='Open'
-          onPress={() => navigation.navigate("Body Parts")}
-        />
+        <TouchableOpacity onPress={() => navigation.navigate("Body Parts")}>
+          <Image
+            source={BodyPic}
+            style={{
+              height: 100,
+              width: 250,
+              borderRadius: 20,
+              borderColor: "#009688",
+              marginTop: 5,
+              overflow: "hidden",
+              borderWidth: 3,
+            }}
+          />
+        </TouchableOpacity>
       </View>
       <View style={styles.container}>
         <Text style={{ fontSize: 26, fontWeight: "bold" }}>
           Common Greetings
         </Text>
-        <Button
-          title='Open'
+        <TouchableOpacity
           onPress={() => navigation.navigate("Common Greetings")}
-        />
+        >
+          <Image
+            source={GreetingsPic}
+            style={{
+              height: 100,
+              width: 250,
+              borderRadius: 20,
+              borderColor: "#009688",
+              marginTop: 5,
+              overflow: "hidden",
+              borderWidth: 3,
+            }}
+          />
+        </TouchableOpacity>
       </View>
       <View style={styles.container}>
         <Text style={{ fontSize: 26, fontWeight: "bold" }}>Family</Text>
-        <Button title='Open' onPress={() => navigation.navigate("Family")} />
+        <TouchableOpacity onPress={() => navigation.navigate("Family")}>
+          <Image
+            source={BodyPic}
+            style={{
+              height: 100,
+              width: 250,
+              borderRadius: 20,
+              borderColor: "#009688",
+              marginTop: 5,
+              overflow: "hidden",
+              borderWidth: 3,
+            }}
+          />
+        </TouchableOpacity>
       </View>
     </ImageBackground>
   )
@@ -114,7 +175,20 @@ function QuizScreen({ navigation }) {
         >
           Easy Quiz
         </Text>
-        <Button title='Open' onPress={() => navigation.navigate("Easy Quiz")} />
+        <TouchableOpacity onPress={() => navigation.navigate("Easy Quiz")}>
+          <Image
+            source={BodyPic}
+            style={{
+              height: 100,
+              width: 250,
+              borderRadius: 20,
+              borderColor: "#009688",
+              marginTop: 5,
+              overflow: "hidden",
+              borderWidth: 3,
+            }}
+          />
+        </TouchableOpacity>
       </View>
       <View style={styles.container}>
         <Text
@@ -123,10 +197,20 @@ function QuizScreen({ navigation }) {
         >
           Medium Quiz
         </Text>
-        <Button
-          title='Open'
-          onPress={() => navigation.navigate("Medium Quiz")}
-        />
+        <TouchableOpacity onPress={() => navigation.navigate("Medium Quiz")}>
+          <Image
+            source={GreetingsPic}
+            style={{
+              height: 100,
+              width: 250,
+              borderRadius: 20,
+              borderColor: "#009688",
+              marginTop: 5,
+              overflow: "hidden",
+              borderWidth: 3,
+            }}
+          />
+        </TouchableOpacity>
       </View>
       <View style={styles.container}>
         <Text
@@ -135,7 +219,20 @@ function QuizScreen({ navigation }) {
         >
           Hard Quiz
         </Text>
-        <Button title='Open' onPress={() => navigation.navigate("Hard Quiz")} />
+        <TouchableOpacity onPress={() => navigation.navigate("Hard Quiz")}>
+          <Image
+            source={ActionPic}
+            style={{
+              height: 100,
+              width: 250,
+              borderRadius: 20,
+              borderColor: "#009688",
+              marginTop: 5,
+              overflow: "hidden",
+              borderWidth: 3,
+            }}
+          />
+        </TouchableOpacity>
       </View>
     </ImageBackground>
   )
