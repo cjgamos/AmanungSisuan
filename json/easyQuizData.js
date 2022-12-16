@@ -11,7 +11,6 @@ export const easyQuizData = [
   },
   {
     question: "What is the kapampangan of Get?",
-    icon: require("../assets/Actions/FLY.jpg"),
     options: ["Sulagpo", "Kumwa", "Sali"],
     correct_option: "Kumwa",
   },

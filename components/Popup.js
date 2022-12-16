@@ -1,6 +1,14 @@
 import React from "react"
-import { View, Text, StyleSheet, Image, ImageBackground } from "react-native"
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  ImageBackground,
+  Alert,
+} from "react-native"
 import Ionicons from "react-native-vector-icons/Ionicons"
+import { Audio } from "expo-av"
 
 // Text to Speech
 import * as Speech from "expo-speech"
@@ -11,50 +19,41 @@ import FavoriteList from "./FavoriteList"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 
 const Popup = ({ route }) => {
-  const [items, setItems] = React.useState([])
-  const [favorites, setFavorites] = React.useState([])
+  const [sound, setSound] = React.useState()
 
-  let myList = []
-  // let favorite = []
+  function delay(time) {
+    return new Promise((resolve) => setTimeout(resolve, time))
+  }
+
+  async function playSound(VOICE) {
+    console.log("Loading Sound")
+    const { sound } = await Audio.Sound.createAsync(VOICE)
+    setSound(sound)
+
+    console.log("Playing Sound")
+    await sound.playAsync()
+  }
+
+  React.useEffect(() => {
+    return sound
+      ? () => {
+          console.log("Unloading Sound")
+          sound.unloadAsync()
+        }
+      : undefined
+  }, [sound])
 
   const onClickItem = () => {
-    Speech.speak(route.params.english)
-    Speech.speak(route.params.tagalog, { language: "fil" })
-    Speech.speak(route.params.kapampangan, { language: "es" })
+    // Speech.speak(route.params.english)
+    // Speech.speak(route.params.tagalog, { language: "fil" })
+    console.log(route.params.kapampangan)
+    delay().then(() => playSound(route.params.voice_kapampangan))
   }
 
   const getExistingFavorite = async () => {
     let favorites = await AsyncStorage.getItem("@favorite")
     console.log("Favorites", favorites)
     return favorites ? JSON.parse(favorites) : []
-  }
-
-  const onFaveItem = async (
-    id,
-    english,
-    tagalog,
-    kapampangan,
-    luther,
-    bergano,
-    icon
-  ) => {
-    try {
-      // let existingFavorites = await getExistingFavorite()
-      // const updatedFavorites = [
-      //   ...existingFavorites,
-      //   [id, english, tagalog, kapampangan, luther, bergano, icon],
-      // ]
-      // console.log("Updated Favorites", updatedFavorites)
-      // await AsyncStorage.setItem("@favorite", JSON.stringify(updatedFavorites))
-
-      let existingFavorites = await getExistingFavorite()
-      var updatedFavorites = [...existingFavorites, JSON.stringify(jsonValue)]
-      const jsonValue = JSON.stringify(route.params)
-      await AsyncStorage.setItem("@favorite", jsonValue)
-      console.log(updatedFavorites)
-    } catch (error) {
-      console.log(error)
-    }
   }
 
   return (
@@ -91,7 +90,7 @@ const Popup = ({ route }) => {
               name='volume-high-outline'
               size={80}
               onPress={() => {
-                alert("Listening")
+                Alert.alert("Now Listening", route.params.kapampangan)
                 onClickItem()
               }}
             />

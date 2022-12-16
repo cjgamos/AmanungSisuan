@@ -7,6 +7,7 @@ export const actionData = [
     luther: "sáli",
     bergano: "",
     icon: require("../assets/Actions/BUY.png"),
+    voice_kapampangan: require("../assets/Voice/Action/Buy.m4a"),
   },
   {
     id: 2,
@@ -15,7 +16,8 @@ export const actionData = [
     kapampangan: "sulagpo",
     luther: "sulápo",
     bergano: "lipao",
-    icon: require("../assets/Actions/FLY.jpg"),
+    icon: require("../assets/Actions/TOFLY.png"),
+    voice_kapampangan: require("../assets/Voice/Action/Fly.m4a"),
   },
   {
     id: 3,
@@ -24,7 +26,8 @@ export const actionData = [
     kapampangan: "kumwa",
     luther: "apaquicuánan",
     bergano: "Acua / cacua / Quiningua / cuma",
-    icon: require("../assets/Actions/GET.jpg"),
+    icon: require("../assets/Actions/GET.png"),
+    voice_kapampangan: require("../assets/Voice/Action/Get.m4a"),
   },
   {
     id: 4,
@@ -33,7 +36,8 @@ export const actionData = [
     kapampangan: "denan",
     luther: "munié",
     bergano: "",
-    icon: require("../assets/Actions/GIVE.jpg"),
+    icon: require("../assets/Actions/TOGIVE.png"),
+    voice_kapampangan: require("../assets/Voice/Action/Give.m4a"),
   },
   {
     id: 5,
@@ -42,8 +46,8 @@ export const actionData = [
     kapampangan: "Munta",
     luther: "umié",
     bergano: "",
-
-    icon: require("../assets/Actions/GO.jpg"),
+    icon: require("../assets/Actions/GO.png"),
+    voice_kapampangan: require("../assets/Voice/Action/Go.m4a"),
   },
   {
     id: 7,
@@ -52,7 +56,8 @@ export const actionData = [
     kapampangan: "lukdang",
     luther: "lucsú",
     bergano: "balsic / lucsu / lundagilin /lacuan  ",
-    icon: require("../assets/Actions/JUMP.jpg"),
+    icon: require("../assets/Actions/JUMP.png"),
+    voice_kapampangan: require("../assets/Voice/Action/Jump.m4a"),
   },
   {
     id: 8,
@@ -62,6 +67,7 @@ export const actionData = [
     luther: "paintúlut",
     bergano: "bilin / lacuan ",
     icon: require("../assets/Actions/LEAVE.png"),
+    voice_kapampangan: require("../assets/Voice/Action/Leave.m4a"),
   },
   {
     id: 9,
@@ -70,7 +76,8 @@ export const actionData = [
     kapampangan: "makipagtalamitam",
     luther: "Mákipagtalamítam",
     bergano: "dumame / irame / demayan / miraramay",
-    icon: require("../assets/Actions/PARTICIPATE.jpg"),
+    icon: require("../assets/Actions/PARTICIPATE.png"),
+    voice_kapampangan: require("../assets/Voice/Action/Participate.m4a"),
   },
   {
     id: 10,
@@ -79,7 +86,8 @@ export const actionData = [
     kapampangan: "mangoryet",
     luther: "",
     bergano: "",
-    icon: require("../assets/Actions/PILFER.jpg"),
+    icon: require("../assets/Actions/PILTERORFLICHING.png"),
+    voice_kapampangan: require("../assets/Voice/Action/Pilfer.m4a"),
   },
   {
     id: 11,
@@ -88,7 +96,8 @@ export const actionData = [
     kapampangan: "pulayi",
     luther: "mulaí",
     bergano: "pulayi / mulayi / mamulayi",
-    icon: require("../assets/Actions/RUN.jpeg"),
+    icon: require("../assets/Actions/RUN.png"),
+    voice_kapampangan: require("../assets/Voice/Action/Run.m4a"),
   },
   {
     id: 12,
@@ -98,6 +107,7 @@ export const actionData = [
     luther: "guilí",
     bergano: "guili /mangguili / mangili",
     icon: require("../assets/Actions/SLICE.png"),
+    voice_kapampangan: require("../assets/Voice/Action/Slice.m4a"),
   },
   {
     id: 14,
@@ -106,7 +116,8 @@ export const actionData = [
     kapampangan: "magnako",
     luther: "manáco",
     bergano: "manaco",
-    icon: require("../assets/Actions/STEAL.jpg"),
+    icon: require("../assets/Actions/STEAL.png"),
+    voice_kapampangan: require("../assets/Voice/Action/Steal.m4a"),
   },
   {
     id: 15,
@@ -115,7 +126,8 @@ export const actionData = [
     kapampangan: "dakurak",
     luther: "",
     bergano: "dalpak / manyalpac / dilpac",
-    icon: require("../assets/Actions/STEP.jpg"),
+    icon: require("../assets/Actions/STEP_ON.png"),
+    voice_kapampangan: require("../assets/Voice/Action/Step_on.m4a"),
   },
   {
     id: 16,
@@ -124,7 +136,8 @@ export const actionData = [
     kapampangan: "tuknang",
     luther: "tucnáng",
     bergano: "tucnang / ",
-    icon: require("../assets/Actions/STOP.jpg"),
+    icon: require("../assets/Actions/STOP.png"),
+    voice_kapampangan: require("../assets/Voice/Action/Stop.m4a"),
   },
   {
     id: 17,
@@ -133,7 +146,8 @@ export const actionData = [
     kapampangan: "mangamanung kapagmakitan",
     luther: "Mangamánung capgmasakítan",
     bergano: "Sisi / Sisisi / Pamanisi",
-    icon: require("../assets/Actions/APOLOGIZE.jpg"),
+    icon: require("../assets/Actions/TOAPOLOGIZE.png"),
+    voice_kapampangan: require("../assets/Voice/Action/Apologize.m4a"),
   },
   {
     id: 18,
@@ -142,7 +156,8 @@ export const actionData = [
     kapampangan: "awsan",
     luther: "máus, culáit",
     bergano: "Yaus / Maus / Ivaus / Mañiaus, ",
-    icon: require("../assets/Actions/CALL.jpg"),
+    icon: require("../assets/Actions/TOCALL.png"),
+    voice_kapampangan: require("../assets/Voice/Action/Call.m4a"),
   },
   {
     id: 19,
@@ -152,6 +167,7 @@ export const actionData = [
     luther: "",
     bergano: "",
     icon: require("../assets/Actions/CATCH.jpg"),
+    voice_kapampangan: require("../assets/Voice/Action/Fish_catching.m4a"),
   },
   {
     id: 20,
@@ -160,7 +176,8 @@ export const actionData = [
     kapampangan: "pututan",
     luther: "cutúran",
     bergano: "Bangal / Bangalan / cauani / cutud /",
-    icon: require("../assets/Actions/CUT.jpg"),
+    icon: require("../assets/Actions/TOCUT.png"),
+    voice_kapampangan: require("../assets/Voice/Action/Cut.m4a"),
   },
   {
     id: 21,
@@ -169,17 +186,19 @@ export const actionData = [
     kapampangan: "samasan",
     luther: "",
     bergano: "Amasamas / Miamasamas",
-    icon: require("../assets/Actions/FIX.jpeg"),
+    icon: require("../assets/Actions/TOFIX.png"),
+    voice_kapampangan: require("../assets/Voice/Action/Fix.m4a"),
   },
-  {
-    id: 22,
-    english: "play",
-    tagalog: "maglaro",
-    kapampangan: "pyalungan",
-    luther: "pyálung",
-    bergano: "",
-    icon: require("../assets/Actions/PLAY.png"),
-  },
+  // {
+  //   id: 22,
+  //   english: "play",
+  //   tagalog: "maglaro",
+  //   kapampangan: "pyalungan",
+  //   luther: "pyálung",
+  //   bergano: "",
+  //   icon: require("../assets/Actions/PLAY.png"),
+  //   voice_kapampangan: require("../assets/Voice/Action/Play.m4a"),
+  // },
   {
     id: 23,
     english: "shout",
@@ -187,7 +206,8 @@ export const actionData = [
     kapampangan: "gulisak",
     luther: "",
     bergano: "bulyao / Cul-lyao / ",
-    icon: require("../assets/Actions/SHOUT.png"),
+    icon: require("../assets/Actions/TOSHOUT.png"),
+    voice_kapampangan: require("../assets/Voice/Action/Shout.m4a"),
   },
   {
     id: 24,
@@ -196,7 +216,8 @@ export const actionData = [
     kapampangan: "sumabi",
     luther: "mañábi",
     bergano: "",
-    icon: require("../assets/Actions/SPEAK.jpg"),
+    icon: require("../assets/Actions/SPEAK.png"),
+    voice_kapampangan: require("../assets/Voice/Action/Speak.m4a"),
   },
   {
     id: 25,
@@ -205,7 +226,8 @@ export const actionData = [
     kapampangan: "mamipi",
     luther: "Mamipi",
     bergano: "Pipi / Mamipi ",
-    icon: require("../assets/Actions/WASH.jpg"),
+    icon: require("../assets/Actions/TOWASHCLOTHES.png"),
+    voice_kapampangan: require("../assets/Voice/Action/Washing_clothes.m4a"),
   },
   {
     id: 26,
@@ -214,6 +236,7 @@ export const actionData = [
     kapampangan: "bandi",
     luther: "bandi",
     bergano: "bandi",
-    icon: require("../assets/Actions/WEAR.jpg"),
+    icon: require("../assets/Actions/OWN.png"),
+    voice_kapampangan: require("../assets/Voice/Action/Own.m4a"),
   },
 ]

@@ -58,6 +58,7 @@ export default function ActionScreen({ navigation }) {
             kapampangan: item.kapampangan,
             luther: item.luther,
             bergano: item.bergano,
+            voice_kapampangan: item.voice_kapampangan,
           })
         }}
         style={{
@@ -144,6 +145,8 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
     opacity: 0.8,
+    paddingBottom: 50,
+
   },
 
   listHeader: {

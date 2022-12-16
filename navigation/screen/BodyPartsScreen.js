@@ -58,6 +58,7 @@ export default function ActionScreen({ navigation }) {
             kapampangan: item.kapampangan,
             luther: item.luther,
             bergano: item.bergano,
+            voice_kapampangan: item.voice_kapampangan,
           })
         }}
         style={{
@@ -118,14 +119,14 @@ export default function ActionScreen({ navigation }) {
 
   return (
     <ImageBackground source={BGImage} style={styles.backgroundimage}>
+      <TextInput
+        style={styles.textInputStyle}
+        value={search}
+        placeholder='Search Tagalog Keyword Here'
+        underlineColorAndroid='transparent'
+        onChangeText={(text) => searchFilter(text)}
+      />
       <SafeAreaView style={styles.container}>
-        <TextInput
-          style={styles.textInputStyle}
-          value={search}
-          placeholder='Search Tagalog Keyword Here'
-          underlineColorAndroid='transparent'
-          onChangeText={(text) => searchFilter(text)}
-        />
         <FlatList
           ListHeaderComponentStyle={styles.listHeader}
           // ListHeaderComponent={headerComponent}
@@ -144,6 +145,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
     opacity: 0.8,
+    paddingBottom: 50,
   },
 
   listHeader: {

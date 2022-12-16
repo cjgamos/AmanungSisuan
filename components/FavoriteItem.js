@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native"
 
 // import { actionData } from "../json/action"
 
-import testimage from "../assets/Actions/APOLOGIZE.jpg"
+// import testimage from "../assets/Actions/APOLOGIZE.jpg"
 // import { TouchableOpacity } from "react-native-gesture-handler"
 
 const FavoriteItem = (props) => {
@@ -24,7 +24,7 @@ const FavoriteItem = (props) => {
       onPress={() => {}}
     >
       <View style={styles.iconContainer}>
-        <Image source={testimage} style={styles.icon} />
+        {/* <Image source={testimage} style={styles.icon} /> */}
       </View>
       <View>
         <Text style={styles.name}>{"Test"}</Text>

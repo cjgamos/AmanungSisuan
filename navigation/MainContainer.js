@@ -7,8 +7,12 @@ import {
   Button,
   Image,
   TouchableOpacity,
+  ScrollView,
+  StatusBar,
 } from "react-native"
 import BGImage from "../assets/BG.png"
+
+import { Audio } from "expo-av"
 
 import { NavigationContainer } from "@react-navigation/native"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
@@ -33,9 +37,22 @@ import HardQuizScreen from "./screen/HardQuizScreen"
 import PopupScreen from "../components/Popup"
 
 // Images
-import BodyPic from "../assets/bodyParts/EYES_MATA.jpg"
-import ActionPic from "../assets/Actions/APOLOGIZE.jpg"
-import GreetingsPic from "../assets/commonGreetings/EXCUSEME.jpg"
+import BodyPic from "../assets/bodyParts/EYES.png"
+import ActionPic from "../assets/Actions/TOAPOLOGIZE.png"
+import GreetingsPic from "../assets/commonGreetings/Excuseme.png"
+import FamilyPic from "../assets/family/Cousin.png"
+
+//
+
+import ActionLogoPic from "../assets/Categories_picture/actions.png"
+import BodyLogoPic from "../assets/Categories_picture/bodyparts.png"
+import GreetingsLogoPic from "../assets/Categories_picture/Greetings.png"
+import FamilyLogoPic from "../assets/Categories_picture/Family.png"
+
+import ActionLogo from "../assets/Categories_Name/actionswhitebackground.jpg"
+import BodyLogo from "../assets/Categories_Name/bodypartswhitebackground.jpg"
+import GreetingsLogo from "../assets/Categories_Name/commongreetingswhitebackground.jpg"
+import FamilyLogo from "../assets/Categories_Name/familywhitebackground.jpg"
 
 // Screen Names
 const homeName = "Home"
@@ -61,78 +78,80 @@ const QuizStack = createNativeStackNavigator()
 function HomeScreen({ navigation }) {
   return (
     <ImageBackground source={BGImage} style={styles.backgroundimage}>
-      <View style={styles.container}>
-        <Text style={{ fontSize: 26, fontWeight: "bold" }}>Action</Text>
-        <TouchableOpacity onPress={() => navigation.navigate("Action")}>
-          <Image
-            source={ActionPic}
-            style={{
-              height: 100,
-              width: 250,
-              borderRadius: 20,
-              borderColor: "#009688",
-              marginTop: 5,
-              overflow: "hidden",
-              borderWidth: 3,
-            }}
-          />
-        </TouchableOpacity>
-      </View>
-      <View style={styles.container}>
-        <Text style={{ fontSize: 26, fontWeight: "bold" }}>Body Parts</Text>
-        <TouchableOpacity onPress={() => navigation.navigate("Body Parts")}>
-          <Image
-            source={BodyPic}
-            style={{
-              height: 100,
-              width: 250,
-              borderRadius: 20,
-              borderColor: "#009688",
-              marginTop: 5,
-              overflow: "hidden",
-              borderWidth: 3,
-            }}
-          />
-        </TouchableOpacity>
-      </View>
-      <View style={styles.container}>
-        <Text style={{ fontSize: 26, fontWeight: "bold" }}>
-          Common Greetings
-        </Text>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("Common Greetings")}
-        >
-          <Image
-            source={GreetingsPic}
-            style={{
-              height: 100,
-              width: 250,
-              borderRadius: 20,
-              borderColor: "#009688",
-              marginTop: 5,
-              overflow: "hidden",
-              borderWidth: 3,
-            }}
-          />
-        </TouchableOpacity>
-      </View>
-      <View style={styles.container}>
-        <Text style={{ fontSize: 26, fontWeight: "bold" }}>Family</Text>
-        <TouchableOpacity onPress={() => navigation.navigate("Family")}>
-          <Image
-            source={BodyPic}
-            style={{
-              height: 100,
-              width: 250,
-              borderRadius: 20,
-              borderColor: "#009688",
-              marginTop: 5,
-              overflow: "hidden",
-              borderWidth: 3,
-            }}
-          />
-        </TouchableOpacity>
-      </View>
+      <ScrollView>
+        <View style={styles.container}>
+          <Text style={{ fontSize: 26, fontWeight: "bold" }}>Action</Text>
+          <TouchableOpacity onPress={() => navigation.navigate("Action")}>
+            <Image
+              source={ActionLogoPic}
+              style={{
+                height: 100,
+                width: 250,
+                borderRadius: 20,
+                borderColor: "#009688",
+                marginTop: 5,
+                overflow: "hidden",
+                borderWidth: 3,
+              }}
+            />
+          </TouchableOpacity>
+        </View>
+        <View style={styles.container}>
+          <Text style={{ fontSize: 26, fontWeight: "bold" }}>Body Parts</Text>
+          <TouchableOpacity onPress={() => navigation.navigate("Body Parts")}>
+            <Image
+              source={BodyLogoPic}
+              style={{
+                height: 100,
+                width: 250,
+                borderRadius: 20,
+                borderColor: "#009688",
+                marginTop: 5,
+                overflow: "hidden",
+                borderWidth: 3,
+              }}
+            />
+          </TouchableOpacity>
+        </View>
+        <View style={styles.container}>
+          <Text style={{ fontSize: 26, fontWeight: "bold" }}>
+            Common Greetings
+          </Text>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Common Greetings")}
+          >
+            <Image
+              source={GreetingsLogoPic}
+              style={{
+                height: 100,
+                width: 250,
+                borderRadius: 20,
+                borderColor: "#009688",
+                marginTop: 5,
+                overflow: "hidden",
+                borderWidth: 3,
+              }}
+            />
+          </TouchableOpacity>
+        </View>
+        <View style={styles.container}>
+          <Text style={{ fontSize: 26, fontWeight: "bold" }}>Family</Text>
+          <TouchableOpacity onPress={() => navigation.navigate("Family")}>
+            <Image
+              source={FamilyLogoPic}
+              style={{
+                height: 100,
+                width: 250,
+                borderRadius: 20,
+                borderColor: "#009688",
+                marginTop: 5,
+                overflow: "hidden",
+                borderWidth: 3,
+              }}
+            />
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
     </ImageBackground>
   )
 }
@@ -256,6 +275,23 @@ function QuizStackScreen() {
 }
 
 export default function MainContainer() {
+  const [sound, setSound] = React.useState()
+
+  async function playSound() {
+    console.log("Loading Sound")
+    const { sound } = await Audio.Sound.createAsync(
+      require("../assets/backgroundmusic.mp3")
+    )
+    setSound(sound)
+
+    console.log("Playing Sound")
+    await sound.playAsync()
+  }
+
+  React.useEffect(() => {
+    playSound()
+  }, [10])
+
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -297,6 +333,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "rgba(234,234,234,.8)",
+    paddingTop: StatusBar.currentHeight,
   },
   backgroundimage: {
     flex: 1,

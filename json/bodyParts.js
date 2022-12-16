@@ -6,7 +6,8 @@ export const bodyParts = [
     kapampangan: "Balugbug",
     luther: "balugbúg",
     bergano: "balugbug",
-    icon: require("../assets/bodyParts/EARS_BALUGBUG.png"),
+    icon: require("../assets/bodyParts/EAR.png"),
+    voice_kapampangan: require("../assets/Voice/Body/Ears.m4a"),
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const bodyParts = [
     tagalog: "Siko",
     kapampangan: "Siku",
     icon: require("../assets/bodyParts/ELBOW_SIKU.png"),
+    voice_kapampangan: require("../assets/Voice/Body/Elbow.m4a"),
   },
   {
     id: 3,
@@ -22,7 +24,8 @@ export const bodyParts = [
     kapampangan: "Mata",
     luther: "matá",
     bergano: "mata",
-    icon: require("../assets/bodyParts/EYES_MATA.jpg"),
+    icon: require("../assets/bodyParts/EYES.png"),
+    voice_kapampangan: require("../assets/Voice/Body/Eyes.m4a"),
   },
   {
     id: 4,
@@ -31,7 +34,8 @@ export const bodyParts = [
     kapampangan: "buntuc",
     luther: "buntúc",
     bergano: "buntoc",
-    icon: require("../assets/bodyParts/FACE_LUPA.png"),
+    icon: require("../assets/bodyParts/HEAD.png"),
+    voice_kapampangan: require("../assets/Voice/Body/Head.m4a"),
   },
   {
     id: 5,
@@ -40,7 +44,8 @@ export const bodyParts = [
     kapampangan: "puad",
     luther: "puád",
     bergano: "puád",
-    icon: require("../assets/bodyParts/LEGS_BUTIT.png"),
+    icon: require("../assets/bodyParts/LEG.png"),
+    voice_kapampangan: require("../assets/Voice/Body/Leg.m4a"),
   },
   {
     id: 6,
@@ -49,7 +54,8 @@ export const bodyParts = [
     kapampangan: "Taliri",
     luther: "talíri",
     bergano: "taliri",
-    icon: require("../assets/bodyParts/FINGERS_TALIRI.jpg"),
+    icon: require("../assets/bodyParts/FINGER.png"),
+    voice_kapampangan: require("../assets/Voice/Body/Fingers.m4a"),
   },
   {
     id: 7,
@@ -58,7 +64,8 @@ export const bodyParts = [
     kapampangan: "atian",
     luther: "atián",
     bergano: "atian",
-    icon: require("../assets/bodyParts/FOREHEAD_KANUAN.jpg"),
+    icon: require("../assets/bodyParts/ABDOMEN.png"),
+    voice_kapampangan: require("../assets/Voice/Body/Stomach.m4a"),
   },
   {
     id: 8,
@@ -67,7 +74,8 @@ export const bodyParts = [
     kapampangan: "Gamat",
     luther: "gámat",
     bergano: "gamat",
-    icon: require("../assets/bodyParts/HANDS_GAMAT.png"),
+    icon: require("../assets/bodyParts/HANDS.png"),
+    voice_kapampangan: require("../assets/Voice/Body/Hands.m4a"),
   },
   {
     id: 9,
@@ -76,17 +84,10 @@ export const bodyParts = [
     kapampangan: "Bitis",
     luther: "bitís",
     bergano: "bitis",
-    icon: require("../assets/bodyParts/FOOT_TALAMPAKAN.png"),
+    icon: require("../assets/bodyParts/FOOT.png"),
+    voice_kapampangan: require("../assets/Voice/Body/Feet.m4a"),
   },
-  {
-    id: 10,
-    english: "Head",
-    tagalog: "Ulo",
-    kapampangan: "Buntuk",
-    luther: "buntúc",
-    bergano: "buntoc",
-    icon: require("../assets/bodyParts/HEAD_BUNTUK.jpg"),
-  },
+
   {
     id: 11,
     english: "Body",
@@ -94,7 +95,8 @@ export const bodyParts = [
     kapampangan: "catauan",
     luther: "catáuan",
     bergano: "catauan",
-    icon: require("../assets/bodyParts/LEGS_BUTIT.png"),
+    icon: require("../assets/bodyParts/BODY.png"),
+    voice_kapampangan: require("../assets/Voice/Body/Body.m4a"),
   },
   {
     id: 12,
@@ -103,7 +105,8 @@ export const bodyParts = [
     kapampangan: "Asbuk",
     luther: "puád",
     bergano: "puad",
-    icon: require("../assets/bodyParts/MOUTH_ASBUK.jpg"),
+    icon: require("../assets/bodyParts/MOUTH.png"),
+    voice_kapampangan: require("../assets/Voice/Body/Mouth.m4a"),
   },
   {
     id: 13,
@@ -112,7 +115,8 @@ export const bodyParts = [
     kapampangan: "bucung bitis",
     luther: "bucúng bitis",
     bergano: "bucung bitis",
-    icon: require("../assets/bodyParts/NAPE_TUNDUN.jpg"),
+    icon: require("../assets/bodyParts/ANKLE.png"),
+    voice_kapampangan: require("../assets/Voice/Body/Ankle.m4a"),
   },
   {
     id: 14,
@@ -121,7 +125,8 @@ export const bodyParts = [
     kapampangan: "Batal",
     luther: "bátal",
     bergano: "batal",
-    icon: require("../assets/bodyParts/NECK_BATAL.png"),
+    icon: require("../assets/bodyParts/NECK.png"),
+    voice_kapampangan: require("../assets/Voice/Body/Neck.m4a"),
   },
   {
     id: 15,
@@ -130,7 +135,8 @@ export const bodyParts = [
     kapampangan: "Arung",
     luther: "árung",
     bergano: "áron",
-    icon: require("../assets/bodyParts/NOSE_ARUNG.jpg"),
+    icon: require("../assets/bodyParts/NOSE.png"),
+    voice_kapampangan: require("../assets/Voice/Body/Nose.m4a"),
   },
   {
     id: 16,
@@ -139,7 +145,8 @@ export const bodyParts = [
     kapampangan: "Pago",
     luther: "pagó",
     bergano: "pagao",
-    icon: require("../assets/bodyParts/SHOULDER_PAGO.png"),
+    icon: require("../assets/bodyParts/SHOULDER.png"),
+    voice_kapampangan: require("../assets/Voice/Body/Shoulder.m4a"),
   },
   {
     id: 17,
@@ -148,7 +155,8 @@ export const bodyParts = [
     kapampangan: "pisngi",
     luther: "pisnǵi",
     bergano: "pisngi",
-    icon: require("../assets/bodyParts/TEETH_IPAN.webp"),
+    icon: require("../assets/bodyParts/CHEEK.png"),
+    voice_kapampangan: require("../assets/Voice/Body/Cheek.m4a"),
   },
   {
     id: 18,
@@ -157,7 +165,8 @@ export const bodyParts = [
     kapampangan: "baba",
     luther: "babá",
     bergano: "babâ",
-    icon: require("../assets/bodyParts/TONGUE_DILA.png"),
+    icon: require("../assets/bodyParts/CHIN.png"),
+    voice_kapampangan: require("../assets/Voice/Body/Chin.m4a"),
   },
   {
     id: 19,
@@ -166,7 +175,8 @@ export const bodyParts = [
     kapampangan: "talampacan",
     luther: "talampácan",
     bergano: "talampacan",
-    icon: require("../assets/bodyParts/TONGUE_DILA.png"),
+    icon: require("../assets/bodyParts/SOLE.png"),
+    voice_kapampangan: require("../assets/Voice/Body/Sole.m4a"),
   },
   {
     id: 20,
@@ -175,7 +185,8 @@ export const bodyParts = [
     kapampangan: "tud",
     luther: "túd",
     bergano: "tud",
-    icon: require("../assets/bodyParts/TONGUE_DILA.png"),
+    icon: require("../assets/bodyParts/KNEE.png"),
+    voice_kapampangan: require("../assets/Voice/Body/Knee.m4a"),
   },
   {
     id: 21,
@@ -184,7 +195,8 @@ export const bodyParts = [
     kapampangan: "auacan",
     luther: "auácan",
     bergano: "auacan",
-    icon: require("../assets/bodyParts/TONGUE_DILA.png"),
+    icon: require("../assets/bodyParts/WAIST.png"),
+    voice_kapampangan: require("../assets/Voice/Body/Waist.m4a"),
   },
   {
     id: 22,
@@ -193,6 +205,7 @@ export const bodyParts = [
     kapampangan: "buac",
     luther: "buác",
     bergano: "buac",
-    icon: require("../assets/bodyParts/TONGUE_DILA.png"),
+    icon: require("../assets/bodyParts/HAIR.png"),
+    voice_kapampangan: require("../assets/Voice/Body/Hair.m4a"),
   },
 ]
